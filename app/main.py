@@ -17,8 +17,11 @@ from utils import (
 
 from ingest import ingest_uploaded_pdf
 
+# Load environment variables locally; ignored on Streamlit sharing (they use st.secrets)
 load_dotenv()
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+
+# Get API key from environment or Streamlit secrets
+GROQ_API_KEY = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY")
 MODEL = "llama3-70b-8192"
 
 def call_groq_api(context, query, retries=3, delay=2):
@@ -94,4 +97,5 @@ if query:
             answer = call_groq_api(context, query)
 
         st.session_state.history.append((query, answer))
-        st.rerun()
+        st.experimental_rerun()
+
