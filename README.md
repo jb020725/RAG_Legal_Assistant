@@ -1,4 +1,3 @@
-
 # 🧑‍⚖️ RAG Legal Assistant
 
 This is a **Retrieval-Augmented Generation (RAG)** powered legal assistant that answers user queries by retrieving and summarizing relevant information from legal documents (like constitutions or acts). It's designed to help users search, explore, and understand complex legal content in natural language.
@@ -36,11 +35,11 @@ RAG_Legal_Assistant/
 
 ## 🧠 Tech Stack
 
-- **LLM**: [`mistralai/Mistral-7B-Instruct-v0.2`](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2)
+- **LLM**: `llama3-70b-8192` via Hugging Face Inference API / Groq
 - **Embedding Model**: `sentence-transformers/all-MiniLM-L6-v2`
 - **Vector DB**: FAISS
 - **Frontend**: Streamlit
-- **RAG Framework**: Manual RAG pipeline using `langchain`-like custom logic
+- **RAG Framework**: Manual RAG pipeline using custom logic
 
 ---
 
@@ -88,3 +87,4 @@ streamlit run app/main.py
 **Made by Janak Bhat**  
 📧 janakbhat34@gmail.com  
 🔗 [GitHub Repo](https://github.com/jb020725/RAG_Legal_Assistant)
+
